@@ -16,7 +16,7 @@ const App = () => {
     }, [router]);
 
     const handleSubmitButtonClick = useCallback(() => {
-        router.push('/pages/pageApresentation');
+        router.push('/pages/pageArmazenamento');
     }, [router]);
 
 
