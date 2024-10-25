@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
   --background: #ffffff;
@@ -24,4 +25,126 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+.custom-button {
+  @apply rounded-lg; 
+  border-radius: 35px; 
+  background-color:#3EB25E;
+  color: white;
+  font-size: 22px;
+  width: 199px;
+  height: 35.55px;
+  text-align: center;
+}
+.custom-button:hover{
+  background-color:#FFFF7D;
+  color:#000000;
+}
+
+.custom-buttons {
+  @apply rounded-lg; 
+  border-radius: 35px; 
+  background-color:#3EB25E;
+  color: white;
+  font-size: 22px;
+  width: 418px;
+  margin-top: 15px;
+  height: 36px;
+  text-align: center;
+}
+.custom-buttons:hover{
+  background-color:#FFFF7D;
+  color:#000000;
+}
+
+.radio-round {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-left: 47px;
+}
+
+.radio-round input[type="radio"] {
+  appearance: none; 
+  width: 26px;
+  height: 26px;
+  border: 2px solid transparent; 
+  background-color: #3EB25E4D;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.radio-round input[type="radio"]:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #3EB25E; 
+  transform: scale(1); 
+  opacity: 0;
+}
+
+.radio-round input[type="radio"]:checked:before {
+  opacity: 1; 
+}
+
+.radio-round input[type="radio"]:hover:before {
+  opacity: 1; 
+  background-color: #3EB25E;
+  border-color:#3EB25E;
+}
+
+.radio-round input[type="radio"]:checked:hover:before {
+  background-color: #3EB25E; 
+  border: 2px solid transparent;
+}
+
+.radio-square {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-left: 47px;
+}
+
+.radio-square input[type="radio"] {
+  appearance: none; 
+  width: 26px;
+  height: 26px;
+  border: 2px solid transparent; 
+  background-color: #3EB25E4D;
+  border-radius: 20%;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.radio-square input[type="radio"]:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
+  background-color: #3EB25E; 
+  transform: scale(1); 
+  opacity: 0;
+}
+
+.radio-square input[type="radio"]:checked:before {
+  opacity: 1; 
+}
+
+.radio-square input[type="radio"]:hover:before {
+  opacity: 1; 
+  background-color: #3EB25E;
+  border-color:#3EB25E;
+}
+
+.radio-square input[type="radio"]:checked:hover:before {
+  background-color: #3EB25E; 
+  border: 2px solid transparent;
 }
