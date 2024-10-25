@@ -27,13 +27,12 @@ const App = () => {
 
 
   return (
-    <div className="flex">
+    <div className="flex sm:flex-col lg:flex-row justify-evenly">
       <Image
         src="imagens/zero.svg"
         alt="Welcome"
         width={431}
         height={661}
-        className="mt-[51px] ml-[212px] mr-[637] mb-[48px]"
       />
 
       <ContainerComponent className="font-bold">
