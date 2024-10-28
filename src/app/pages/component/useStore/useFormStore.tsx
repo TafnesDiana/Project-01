@@ -23,7 +23,7 @@ interface FormState {
 const useFormStore = create<FormState>()(
   persist(
     (set) => ({
-      textInput: '',
+      textInput: '', // começar como undefined
       textareaInput: '',
       emailInput: '',
       ageInput: '',
@@ -31,7 +31,10 @@ const useFormStore = create<FormState>()(
       selectInputSquare: '',
       radioInputRound: '',
       radioInputSquare: '',
-      setTextInput: (value) => set({ textInput: value }),
+      setTextInput: (value) => {
+        set({ textInput: value })
+        localStorage.setItem('textInput', value)
+      }, // Exemplo, implementar
       setTextareaInput: (value) => set({ textareaInput: value }),
       setEmailInput: (value) => set({ emailInput: value }),
       setAgeInput: (value) => set({ ageInput: value }),

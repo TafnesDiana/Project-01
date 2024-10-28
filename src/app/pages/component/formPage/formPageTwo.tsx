@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; // remover useState
 import useFormStore from '../useStore/useFormStore';
 import TextComponent from '../component/textComponent';
 
@@ -6,17 +6,6 @@ import TextComponent from '../component/textComponent';
 const FormularioTwo: React.FC = () => {
     const { selectInputRound, setSelectInputRound } = useFormStore();
     const { radioInputRound, setRadioInputRound } = useFormStore();
-
-    useEffect(() => {
-        const savedSelectRound = localStorage.getItem('selectInputRound');
-        if (savedSelectRound) {
-            setSelectInputRound(savedSelectRound);
-        }
-    }, [setSelectInputRound]);
-
-    useEffect(() => {
-        localStorage.setItem('selectInputRound', selectInputRound);
-    }, [selectInputRound]);
 
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectInputRound(event.target.value);
@@ -38,6 +27,22 @@ const FormularioTwo: React.FC = () => {
         setRadioInputRound(event.target.value);
     };
 
+    // TODO: Componentizar
+
+    // <label htmlFor="opcao1">
+    //     <input
+    //         type="radio"
+    //         id="opcao1"
+    //         name="options"
+    //         value="opcao1"
+    //         checked={radioInputRound === 'opcao1'}
+    //         onChange={handleRadioChange}
+    //     />
+    //     stock market
+    // </label>
+
+    // TODO: Select procura como fazer dropdown utilizando divs (criar componente)
+
 
     return (
         <div className="relative w-full">
@@ -54,7 +59,7 @@ const FormularioTwo: React.FC = () => {
                             type="radio"
                             id="opcao1"
                             name="options"
-                            value="opcao1"
+                            value="opcao1" // valor errado
                             checked={radioInputRound === 'opcao1'}
                             onChange={handleRadioChange}
                         />
@@ -67,7 +72,7 @@ const FormularioTwo: React.FC = () => {
                             type="radio"
                             id="opcao2"
                             name="options"
-                            value="opcao2"
+                            value="opcao2" // valor errado
                             checked={radioInputRound === 'opcao2'}
                             onChange={handleRadioChange}
                         />
@@ -80,7 +85,7 @@ const FormularioTwo: React.FC = () => {
                             type="radio"
                             id="opcao3"
                             name="options"
-                            value="opcao3"
+                            value="opcao3" // valor errado
                             checked={radioInputRound === 'opcao3'}
                             onChange={handleRadioChange}
                         />
@@ -93,7 +98,7 @@ const FormularioTwo: React.FC = () => {
                             type="radio"
                             id="opcao4"
                             name="options"
-                            value="opcao4"
+                            value="opcao4" // valor errado
                             checked={radioInputRound === 'opcao4'}
                             onChange={handleRadioChange}
                         />
@@ -106,7 +111,7 @@ const FormularioTwo: React.FC = () => {
                             type="radio"
                             id="opcao5"
                             name="options"
-                            value="opcao5"
+                            value="opcao5" // valor errado
                             checked={radioInputRound === 'opcao5'}
                             onChange={handleRadioChange}
                         />

@@ -9,11 +9,11 @@ const FormularioTextarea: React.FC = () => {
         if (savedTextarea) {
             setTextareaInput(savedTextarea);
         }
-    }, [setTextareaInput]);
+    }, [setTextareaInput]); // logica redundante
 
     useEffect(() => {
         localStorage.setItem(' textareaInput',  textareaInput);
-    }, [ textareaInput]);
+    }, [ textareaInput]); // logica redundante
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const value = e.target.value;
