@@ -8,8 +8,7 @@ import Link from 'next/link';
 
 
 const FormularioTwo: React.FC = () => {
-    const { selectInputRound, setSelectInputRound } = useFormStore();
-    const { radioInputRound, setRadioInputRound } = useFormStore();
+    const { selectInputRound, setSelectInputRound, radioInputRound, setRadioInputRound } = useFormStore();
 
     const handleSelectChange = (option: string) => {
         setSelectInputRound(option);

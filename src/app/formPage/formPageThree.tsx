@@ -7,8 +7,8 @@ import ButtonComponent from '../_component/button/buttonComponent';
 
 
 const FormularioThree: React.FC = () => {
-    const { selectInputSquare, setSelectInputSquare } = useFormStore();
-    const { radioInputSquare, setRadioInputSquare } = useFormStore();
+    const { selectInputSquare, setSelectInputSquare, radioInputSquare, setRadioInputSquare } = useFormStore();
+
 
     const handleSelectChange = (option: string) => {
         setSelectInputSquare(option);

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface FormState {
-  textInput: string;
+  textInput: string|undefined;
   textareaInput: string;
   emailInput: string;
   ageInput: string;
@@ -23,7 +23,7 @@ interface FormState {
 const useFormStore = create<FormState>()(
   persist(
     (set) => ({
-      textInput: '', // começar como undefined
+      textInput: undefined, // começar como undefined
       textareaInput: '',
       emailInput: '',
       ageInput: '',

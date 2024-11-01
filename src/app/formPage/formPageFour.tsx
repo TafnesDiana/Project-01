@@ -24,14 +24,13 @@ const FormularioFour: React.FC = () => {
                 required
             />
             <div className="flex justify-between mt-1">
-                <div className="p-2  text-[#00000040]">{textareaInput.length}/250</div>
+                <div className="p-2 text-[#00000040]">{textareaInput.length}/250</div>
             </div>
-            {textareaInput.length < 10 && (
+            {textareaInput.length < 10 ? (
                 <div className="text-red-500 text-sm mt-1">
                     O texto deve ter no mínimo 10 caracteres.
                 </div>
-            )}
-            {textareaInput.length > 10 && (
+            ) : (
                 <div className="text-[#3EB25E] text-sm mt-1">
                     Quantidade mínima de caracteres atingido.
                 </div>
@@ -39,16 +38,24 @@ const FormularioFour: React.FC = () => {
 
             <div className="w-full flex flex-col">
                 <div className='space-x-6 mt-3'>
-                    <Link href={'/pages/pageThree'}><ButtonComponent className=" custom-button mt-3 font-bold">Back</ButtonComponent></Link>
-                    <Link href={'/pages/pageFive'}><ButtonComponent className="custom-button mt-3 font-bold">Next</ButtonComponent></Link>
+                    <Link href={'/pages/pageThree'}>
+                        <ButtonComponent className="custom-button mt-3 font-bold">Back</ButtonComponent>
+                    </Link>
+                    <Link href={textareaInput.length >= 10 ? '/pages/pageFive' : '#'}>
+                        <ButtonComponent
+                            className="custom-button mt-3 font-bold"
+                            disabled={textareaInput.length < 10} >
+                            Next
+                        </ButtonComponent>
+                    </Link>
                 </div>
                 <div className='mt-3'>
-                    <Link href={'/pages/pageFive'}><ButtonComponent className="custom-buttons font-bold">Skip</ButtonComponent></Link>
+                    <Link href={'/pages/pageFive'}>
+                        <ButtonComponent className="custom-buttons font-bold">Skip</ButtonComponent>
+                    </Link>
                 </div>
             </div>
         </div>
-
-
     );
 };
 
