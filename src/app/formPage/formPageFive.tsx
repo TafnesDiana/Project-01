@@ -1,46 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import useFormStore from '../useStore/useFormStore';
-import TextComponent from '../component/textComponent';
+import React, { useState } from 'react';
+import useFormStore from '../localStorage/useFormStore';
+import TextComponent from '../_component/text/textComponent';
+import Link from 'next/link';
+import ButtonComponent from '../_component/button/buttonComponent';
 
 
-const FormularioText: React.FC = () => {
-    const { textInput, setTextInput } = useFormStore();
-    const { emailInput, setEmailInput } = useFormStore();
-    const [ageInput, setAgeInput] = useState<number>(0);
-
-    useEffect(() => {
-        const savedText = localStorage.getItem('textInput');
-        if (savedText) {
-            setTextInput(savedText);
-        }
-    }, [setTextInput]);
-
-    useEffect(() => {
-        localStorage.setItem('textInput', textInput);
-    }, [textInput]);
-
-
-    useEffect(() => {
-        const savedEmail = localStorage.getItem('emailInput');
-        if (savedEmail ) {
-            setEmailInput(savedEmail);
-        }
-    }, [setEmailInput]);
-
-    useEffect(() => {
-        localStorage.setItem('emailInput', emailInput);
-    }, [emailInput]);
-
-    useEffect(() => {
-        const savedAge = localStorage.getItem('ageInput');
-        if (savedAge ) {
-            setAgeInput(Number(savedAge));
-        }
-    }, [setAgeInput]);
-
-    useEffect(() => {
-        localStorage.setItem('ageInput', ageInput.toString());
-    }, [ageInput]);
+const FormularioFive: React.FC = () => {
+    const { textInput, setTextInput, emailInput, setEmailInput, ageInput, setAgeInput } = useFormStore();
 
 
     return (
@@ -71,13 +37,16 @@ const FormularioText: React.FC = () => {
                 min="0"
                 max="120"
                 placeholder='-- --'
-                onChange={(e) => setAgeInput(Number(e.target.value))}
+                onChange={(e) => setAgeInput(e.target.value)}
                 className='block w-[152px] mt-3 ml-0 p-3 rounded-[20px] h-[52px] text-[27px] border-[1px] border-[#00000040] focus:border-[#475242] outline-none resize-none'
                 />
-
             </form>
+            <div className='flex-col'>
+                    <Link href={'/pages/pageFour'}><ButtonComponent className="custom-buttons mt-3  font-bold">Back</ButtonComponent></Link>
+                    <Link href={'/pages/pageDisplay'}><ButtonComponent className="custom-buttons mt-3 font-bold">Submit</ButtonComponent></Link>
+                </div>
         </div>
     );
 };
 
-export default FormularioText;
+export default FormularioFive;

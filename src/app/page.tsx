@@ -1,10 +1,10 @@
 'use client'
 import Image from "next/image";
-import TextComponent from "./pages/component/component/textComponent";
-import ButtonComponent from "./pages/component/component/buttonComponent";
-import ContainerComponent from "./pages/component/component/containerComponent";
+import TextComponent from "./_component/text/textComponent";
+import ButtonComponent from "./_component/button/buttonComponent";
+import ContainerComponent from "./_component/container/containerComponent";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 const App = () => {
@@ -19,15 +19,8 @@ const App = () => {
     setButtonText("Let´s Go");
   };
 
-  const router = useRouter();
-  
-  const handleButtonclick = () =>{
-    router.push('/pages/pageOne');
-  }
-
-
   return (
-    <div className="flex sm:flex-col lg:flex-row justify-evenly">
+    <div className="flex sm:flex-col lg:flex-row justify-evenly  h-[100vh]">
       <Image
         src="imagens/zero.svg"
         alt="Welcome"
@@ -38,7 +31,7 @@ const App = () => {
       <ContainerComponent className="font-bold">
         <h1 className="text-[111px]">welcome</h1>
         <TextComponent className="text-[29px] pb-20">Tanks for participating in the poll</TextComponent>
-        <ButtonComponent className="custom-button" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={handleButtonclick}>{buttonText}</ButtonComponent>
+        <Link href={'/pages/pageOne'}><ButtonComponent className="custom-button" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{buttonText}</ButtonComponent></Link>
       </ContainerComponent>
 
     </div>
