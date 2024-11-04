@@ -17,7 +17,7 @@ const FormularioFour: React.FC = () => {
         <div className="relative w-full">
             <textarea
                 id="textInput"
-                value={textareaInput}
+                value={textareaInput|| ''}
                 onChange={handleChange}
                 className="w-full p-3 rounded-[20px] h-[225px] text-[27px] border-[1px] border-[#00000040] focus:border-[#475242] outline-none resize-none"
                 minLength={10}
@@ -43,7 +43,7 @@ const FormularioFour: React.FC = () => {
                     </Link>
                     <Link href={textareaInput.length >= 10 ? '/pages/pageFive' : '#'}>
                         <ButtonComponent
-                            className="custom-button mt-3 font-bold"
+                            className="custom-button mt-3 cursor-pointer font-bold"
                             disabled={textareaInput.length < 10} >
                             Next
                         </ButtonComponent>

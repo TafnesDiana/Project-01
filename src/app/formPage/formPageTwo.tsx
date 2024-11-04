@@ -19,6 +19,11 @@ const FormularioTwo: React.FC = () => {
         setRadioInputRound(event.target.value);
     };
 
+    const handleClickSkip = () =>{
+        setSelectInputRound (undefined);
+        setRadioInputRound (undefined);
+    }
+
 
     return (
         <div className="relative w-full">
@@ -34,11 +39,17 @@ const FormularioTwo: React.FC = () => {
             </form>
             <div className="w-full flex flex-col items-start">
                 <div className='flex space-x-6 mt-3'>
-                    <Link href={'/pages/pageOne'}><ButtonComponent className=" custom-button mt-3 font-bold">Back</ButtonComponent></Link>
-                    <Link href={'/pages/pageThree'}><ButtonComponent className="custom-button mt-3 font-bold">Next</ButtonComponent></Link>
+                    <Link href={'/pages/pageOne'}>
+                        <ButtonComponent className=" custom-button mt-3 font-bold">Back</ButtonComponent>
+                    </Link>
+                    <Link href={'/pages/pageThree'}>
+                        <ButtonComponent className="custom-button mt-3 font-bold">Next</ButtonComponent>
+                    </Link>
                 </div>
                 <div className='mt-3'>
-                    <Link href={'/pages/pageThree'}><ButtonComponent className="custom-buttons font-bold" >Skip</ButtonComponent></Link>
+                    <Link href={'/pages/pageThree'}>
+                        <ButtonComponent onClick={handleClickSkip} className="custom-buttons font-bold" >Skip</ButtonComponent>
+                    </Link>
                 </div>
             </div>
         </div>

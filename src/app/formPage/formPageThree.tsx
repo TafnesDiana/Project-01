@@ -19,6 +19,11 @@ const FormularioThree: React.FC = () => {
         setRadioInputSquare(event.target.value);
     };
 
+    const handleClickSkip = () =>{
+        setSelectInputSquare (undefined);
+        setRadioInputSquare (undefined);
+    }
+
     return (
         <div className="w-full flex flex-col items-start">
             <form action="">
@@ -32,11 +37,17 @@ const FormularioThree: React.FC = () => {
             </form>
             <div className="w-full flex flex-col items-start">
                 <div className='flex space-x-6 mt-3'>
-                    <Link href={'/pages/pageTwo'}><ButtonComponent className=" custom-button mt-3 font-bold">Back</ButtonComponent></Link>
-                    <Link href={'/pages/pageFour'}><ButtonComponent className="custom-button mt-3 font-bold">Next</ButtonComponent></Link>
+                    <Link href={'/pages/pageTwo'}>
+                        <ButtonComponent className=" custom-button mt-3 font-bold">Back</ButtonComponent>
+                    </Link>
+                    <Link href={'/pages/pageFour'}>
+                        <ButtonComponent className="custom-button mt-3 font-bold">Next</ButtonComponent>
+                    </Link>
                 </div>
                 <div className='mt-3'>
-                    <Link href={'/pages/pageFour'}><ButtonComponent className="custom-buttons font-bold">Skip</ButtonComponent></Link>
+                    <Link href={'/pages/pageFour'}>
+                        <ButtonComponent  onClick={handleClickSkip} className="custom-buttons font-bold">Skip</ButtonComponent>
+                    </Link>
                 </div>
             </div>
         </div>
