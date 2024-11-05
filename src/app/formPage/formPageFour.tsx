@@ -17,7 +17,7 @@ const FormularioFour: React.FC = () => {
         <div className="relative w-full">
             <textarea
                 id="textInput"
-                value={textareaInput|| ''}
+                value={textareaInput}
                 onChange={handleChange}
                 className="w-full p-3 rounded-[20px] h-[225px] text-[27px] border-[1px] border-[#00000040] focus:border-[#475242] outline-none resize-none"
                 minLength={10}
@@ -37,7 +37,7 @@ const FormularioFour: React.FC = () => {
             )}
 
             <div className="w-full flex flex-col">
-                <div className='space-x-6 mt-3'>
+                <div className='flex mt-3  sm:flex-row gap-4 lg:gap-6 justify-center'>
                     <Link href={'/pages/pageThree'}>
                         <ButtonComponent className="custom-button mt-3 font-bold">Back</ButtonComponent>
                     </Link>
@@ -49,7 +49,7 @@ const FormularioFour: React.FC = () => {
                         </ButtonComponent>
                     </Link>
                 </div>
-                <div className='mt-3'>
+                <div className='mt-3 flex flex-col sm:flex-row gap-1 lg:gap-6 justify-center'>
                     <Link href={'/pages/pageFive'}>
                         <ButtonComponent className="custom-buttons font-bold">Skip</ButtonComponent>
                     </Link>

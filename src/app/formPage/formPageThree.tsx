@@ -20,8 +20,8 @@ const FormularioThree: React.FC = () => {
     };
 
     const handleClickSkip = () =>{
-        setSelectInputSquare (undefined);
-        setRadioInputSquare (undefined);
+        setSelectInputSquare ("indefinido");
+        setRadioInputSquare ("indefinido");
     }
 
     return (
@@ -36,7 +36,7 @@ const FormularioThree: React.FC = () => {
                 <InputComponent type="radio" id='experience with little investment' value='experience with little investment' placeholder="Selecione uma opção" onChange={handleRadioChange} label="experience with little investment" className="radio-square" checked={radioInputSquare === 'experience with little investment'} />
             </form>
             <div className="w-full flex flex-col items-start">
-                <div className='flex space-x-6 mt-3'>
+                <div className='flex mt-3  sm:flex-row gap-4 lg:gap-6 justify-center'>
                     <Link href={'/pages/pageTwo'}>
                         <ButtonComponent className=" custom-button mt-3 font-bold">Back</ButtonComponent>
                     </Link>
@@ -44,7 +44,7 @@ const FormularioThree: React.FC = () => {
                         <ButtonComponent className="custom-button mt-3 font-bold">Next</ButtonComponent>
                     </Link>
                 </div>
-                <div className='mt-3'>
+                <div className='mt-3 mb-4 flex flex-col sm:flex-row gap-1 lg:gap-6 justify-center'>
                     <Link href={'/pages/pageFour'}>
                         <ButtonComponent  onClick={handleClickSkip} className="custom-buttons font-bold">Skip</ButtonComponent>
                     </Link>

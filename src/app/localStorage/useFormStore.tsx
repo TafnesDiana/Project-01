@@ -3,21 +3,21 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface FormState {
   textInput: string|undefined;
-  textareaInput: string| ' ';
+  textareaInput: string;
   emailInput: string;
   ageInput: string;
-  selectInputRound: string| undefined ;
-  selectInputSquare: string| undefined;
-  radioInputRound: string| undefined;
-  radioInputSquare: string| undefined;
+  selectInputRound: string;
+  selectInputSquare: string;
+  radioInputRound: string;
+  radioInputSquare: string;
   setTextInput: (value: string) => void;
-  setTextareaInput: (value: string| undefined) => void;
+  setTextareaInput: (value: string) => void;
   setEmailInput: (value: string) => void;
   setAgeInput: (value: string) => void;
-  setSelectInputRound: (value: string| undefined) => void;
-  setSelectInputSquare: (value: string| undefined) => void;
-  setRadioInputRound: (value: string| undefined) => void;
-  setRadioInputSquare: (value: string| undefined) => void;
+  setSelectInputRound: (value: string) => void;
+  setSelectInputSquare: (value: string) => void;
+  setRadioInputRound: (value: string) => void;
+  setRadioInputSquare: (value: string) => void;
 }
 
 const useFormStore = create<FormState>()(
@@ -37,7 +37,7 @@ const useFormStore = create<FormState>()(
       }, // Exemplo, implementar
       setTextareaInput: (value) => {
         set({ textareaInput: value })
-        localStorage.setItem(' textareaInput', value || '')
+        localStorage.setItem(' textareaInput', value)
       },
       setEmailInput: (value) => {
         set({ emailInput: value })
@@ -49,19 +49,19 @@ const useFormStore = create<FormState>()(
       },
       setSelectInputRound: (value) => {
         set({ selectInputRound: value })
-        localStorage.setItem('selectInputRound',value || '')
+        localStorage.setItem('selectInputRound',value)
       },
       setSelectInputSquare: (value) =>{
         set({ selectInputSquare: value })
-        localStorage.setItem('selectInputSquare', value || '')
+        localStorage.setItem('selectInputSquare', value)
       },
       setRadioInputRound: (value) => {
         set({ radioInputRound: value })
-        localStorage.setItem('radioInputRound', value || '')
+        localStorage.setItem('radioInputRound', value)
       },
       setRadioInputSquare: (value) => {
         set({ radioInputSquare: value })
-        localStorage.setItem('radioInputSquare', value || '')
+        localStorage.setItem('radioInputSquare', value)
       },
     }),
     {

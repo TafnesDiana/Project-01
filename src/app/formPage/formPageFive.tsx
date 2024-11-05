@@ -3,10 +3,13 @@ import useFormStore from '../localStorage/useFormStore';
 import TextComponent from '../_component/text/textComponent';
 import Link from 'next/link';
 import ButtonComponent from '../_component/button/buttonComponent';
+import { useRouter } from 'next/router';
 
 const FormularioFive: React.FC = () => {
     const { textInput, setTextInput, emailInput, setEmailInput, ageInput, setAgeInput } = useFormStore();
     const [error, setError] = useState<string | null>(null);
+
+    
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault(); 
@@ -22,7 +25,7 @@ const FormularioFive: React.FC = () => {
 
     return (
         <div className="relative w-full">
-            <form onSubmit={handleSubmit}>
+            <form   onSubmit={handleSubmit}>
                 <TextComponent className="font-sans text-[26px] font-bold pb-3 mt-3 mb-3 text-justify tracking-tighter leading-tight">Full Name:</TextComponent>
                 <input
                     type="text"
@@ -61,7 +64,7 @@ const FormularioFive: React.FC = () => {
                     <Link href={'/pages/pageFour'}>
                         <ButtonComponent className="custom-buttons mt-3 font-bold">Back</ButtonComponent>
                     </Link>
-                    <button type="submit" className="custom-buttons mt-3 font-bold">Submit</button>
+                    <ButtonComponent type="submit" className="custom-buttons mt-3 font-bold">Submit</ButtonComponent>
                 </div>
             </form>
         </div>
