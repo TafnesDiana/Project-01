@@ -13,6 +13,11 @@ const FormularioFour: React.FC = () => {
         }
     };
 
+    const handleSkip = () => {
+        setTextareaInput("indefinido");
+        localStorage.setItem("textareaInput", "indefinido");
+    };
+
     return (
         <div className="relative w-full">
             <textarea
@@ -24,34 +29,34 @@ const FormularioFour: React.FC = () => {
                 required
             />
             <div className="flex justify-between mt-1">
-                <div className="p-2 text-[#00000040]">{textareaInput.length}/250</div>
+                <div className="p-2 text-[#00000040]">{(textareaInput || '').length}/250</div>
             </div>
-            {textareaInput.length < 10 ? (
+            {(textareaInput === undefined || textareaInput.length < 10) ? (
                 <div className="text-red-500 text-sm mt-1">
                     O texto deve ter no mínimo 10 caracteres.
                 </div>
             ) : (
                 <div className="text-[#3EB25E] text-sm mt-1">
-                    Quantidade mínima de caracteres atingido.
+                    Quantidade mínima de caracteres atingida.
                 </div>
             )}
 
             <div className="w-full flex flex-col">
-                <div className='flex mt-3  sm:flex-row gap-4 lg:gap-6 justify-center'>
+                <div className='flex mt-3 sm:flex-row gap-4 lg:gap-6 justify-center'>
                     <Link href={'/pages/pageThree'}>
                         <ButtonComponent className="custom-button mt-3 font-bold">Back</ButtonComponent>
                     </Link>
-                    <Link href={textareaInput.length >= 10 ? '/pages/pageFive' : '#'}>
+                    <Link href={textareaInput && textareaInput.length >= 10 ? '/pages/pageFive' : '#'}>
                         <ButtonComponent
                             className="custom-button mt-3 cursor-pointer font-bold"
-                            disabled={textareaInput.length < 10} >
+                            disabled={!textareaInput || textareaInput.length < 10} >
                             Next
                         </ButtonComponent>
                     </Link>
                 </div>
                 <div className='mt-3 flex flex-col sm:flex-row gap-1 lg:gap-6 justify-center'>
                     <Link href={'/pages/pageFive'}>
-                        <ButtonComponent className="custom-buttons font-bold">Skip</ButtonComponent>
+                        <ButtonComponent className="custom-buttons font-bold" onClick={handleSkip}>Skip</ButtonComponent>
                     </Link>
                 </div>
             </div>

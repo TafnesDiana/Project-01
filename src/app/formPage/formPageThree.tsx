@@ -19,10 +19,13 @@ const FormularioThree: React.FC = () => {
         setRadioInputSquare(event.target.value);
     };
 
-    const handleClickSkip = () =>{
-        setSelectInputSquare ("indefinido");
-        setRadioInputSquare ("indefinido");
-    }
+    const handleClickSkip = () => {
+        setSelectInputSquare("indefinido");
+        localStorage.setItem("selectInputRound", "indefinido");
+        
+        setRadioInputSquare("indefinido");
+        localStorage.setItem("radioInputRound", "indefinido");
+    };
 
     return (
         <div className="w-full flex flex-col items-start">
