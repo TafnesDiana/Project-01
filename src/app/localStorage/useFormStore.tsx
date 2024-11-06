@@ -11,13 +11,13 @@ interface FormState {
   radioInputRound: string|undefined;
   radioInputSquare: string|undefined;
   setTextInput: (value: string) => void;
-  setTextareaInput: (value: string) => void;
+  setTextareaInput: (value: string|undefined) => void;
   setEmailInput: (value: string) => void;
   setAgeInput: (value: string) => void;
-  setSelectInputRound: (value: string) => void;
-  setSelectInputSquare: (value: string) => void;
-  setRadioInputRound: (value: string) => void;
-  setRadioInputSquare: (value: string) => void;
+  setSelectInputRound: (value: string|undefined) => void;
+  setSelectInputSquare: (value: string|undefined) => void;
+  setRadioInputRound: (value: string|undefined) => void;
+  setRadioInputSquare: (value: string|undefined) => void;
 }
 
 const useFormStore = create<FormState>()(
@@ -36,8 +36,8 @@ const useFormStore = create<FormState>()(
         localStorage.setItem('textInput', value)
       }, // Exemplo, implementar
       setTextareaInput: (value) => {
-        set({ textareaInput: value });
-        localStorage.setItem('textareaInput', value ?? 'indefinido');
+        set({ textareaInput: value});
+        localStorage.setItem('textareaInput', value ?? "indefinido");
     },
       setEmailInput: (value) => {
         set({ emailInput: value })
@@ -49,19 +49,19 @@ const useFormStore = create<FormState>()(
       },
       setSelectInputRound: (value) => {
         set({ selectInputRound: value });
-        localStorage.setItem('selectInputRound', value ?? 'indefinido');
+        localStorage.setItem('selectInputRound', value ?? "indefinido");
     },
       setSelectInputSquare: (value) =>{
         set({ selectInputSquare: value })
-        localStorage.setItem('selectInputSquare', value ?? 'indefinido')
+        localStorage.setItem('selectInputSquare', value ?? "indefinido")
       },
       setRadioInputRound: (value) => {
         set({ radioInputRound: value });
-        localStorage.setItem('radioInputRound', value ?? 'indefinido');
+        localStorage.setItem('radioInputRound', value ?? "indefinido" );
     },
       setRadioInputSquare: (value) => {
         set({ radioInputSquare: value })
-        localStorage.setItem('radioInputSquare', value ?? 'indefinido')
+        localStorage.setItem('radioInputSquare', value ?? "indefinido")
       },
     }),
     {

@@ -14,8 +14,7 @@ const FormularioFour: React.FC = () => {
     };
 
     const handleSkip = () => {
-        setTextareaInput("indefinido");
-        localStorage.setItem("textareaInput", "indefinido");
+        setTextareaInput(undefined);
     };
 
     return (

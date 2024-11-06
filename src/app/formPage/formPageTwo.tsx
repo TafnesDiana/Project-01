@@ -20,11 +20,8 @@ const FormularioTwo: React.FC = () => {
     };
 
     const handleClickSkip = () => {
-        setSelectInputRound("indefinido");
-        localStorage.setItem("selectInputRound", "indefinido");
-        
-        setRadioInputRound("indefinido");
-        localStorage.setItem("radioInputRound", "indefinido");
+        setSelectInputRound(undefined);
+        setRadioInputRound(undefined);
     };
 
 
